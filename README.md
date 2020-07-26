@@ -2,7 +2,7 @@ viranchee
 
 ### Next - Chakra app
 
-# React, with Typescript, Chakra-UI, ESLint and Prettier
+Get started quickly in React, Typescript, Chakra-UI, ESLint and Prettier
 
 ```bash
 react-app() {
