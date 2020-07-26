@@ -1,6 +1,11 @@
 {
+  "semi": false,
   "arrowParens": "always",
-  "trailingComma": "es5",
   "singleQuote": true,
-  "semi": false
+  "trailingComma": "all",
+  "bracketSpacing": true,
+  "htmlWhitespaceSensitivity": "css",
+  "insertPragma": false,
+  "tabWidth": 2,
+  "useTabs": false
 }
