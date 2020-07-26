@@ -1,44 +1,56 @@
-# Example app with [chakra-ui](https://github.com/chakra-ui/chakra-ui)
+viranchee
 
-This example features how to use [chakra-ui](https://github.com/chakra-ui/chakra-ui) as the component library within a Next.js app.
+### Next - Chakra app
 
-We are connecting the Next.js `_app.js` with `chakra-ui`'s Theme and ColorMode containers so the pages can have app-wide dark/light mode. We are also creating some components which shows the usage of `chakra-ui`'s style props.
-
-## Deploy your own
-
-Deploy the example using [Vercel](https://vercel.com):
-
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/import/project?template=https://github.com/vercel/next.js/tree/canary/examples/with-chakra-ui)
-
-## How to use
-
-### Using `create-next-app`
-
-Execute [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) with [npm](https://docs.npmjs.com/cli/init) or [Yarn](https://yarnpkg.com/lang/en/docs/cli/create/) to bootstrap the example:
+# React, with Typescript, Chakra-UI, ESLint and Prettier
 
 ```bash
-npx create-next-app --example with-chakra-ui with-chakra-ui-app
-# or
-yarn create next-app --example with-chakra-ui with-chakra-ui-app
+react-app() {
+  CODE_EDITOR=code #Replace with webstorm
+  CONFIG_FILES_PATH=~/Code/jsconfig
+
+  # FAILSAFE: Add Default Configs ESLint, Prettier, TSConfig files. Remove this if files are present
+  touch $CONFIG_FILES_PATH/.prettierrc
+  touch $CONFIG_FILES_PATH/.eslintrc.json
+  touch $CONFIG_FILES_PATH/tsconfig.json
+
+  # Create-Next-App
+  yarn create next-app --example with-chakra-ui $1
+  cd $1
+
+  echo "yarn.lock" >> .gitignore #Ignore Yarn file
+  echo $1 > README.md # Clear Readme file, replace with Project Name
+
+
+  for file in $CONFIG_FILES_PATH/{.*,*}; cp $file .
+  # Rename JS to TSX
+  for file in src/pages/*.js; mv $file ${file%.js}.tsx
+  mkdir src/hooks
+
+  # Git remove yarn.lock, commit git
+  git update-index --assume-unchanged yarn.lock
+  git add --all
+  git commit -a -m "Add Configs, use TS"
+  git branch -m master main
+
+  # User Tasks
+  echo "Add this in Package.JSON Scripts"
+  echo '
+    "lint": "eslint . --ext .ts",
+    "lint-and-fix": "eslint . --ext .ts --fix",
+    "lint-debug": "eslint . --ext .ts --debug"
+  '
+
+  # Let the user code faster
+  $CODE_EDITOR .
+
+  # YARN Install some Dependencies
+  yarn add -D typescript @types/node eslint
+  yarn add -D eslint-plugin-react@latest @typescript-eslint/eslint-plugin@latest @typescript-eslint/parser@latest
+
+  git add package.json
+  git commit -v -a --no-edit --amend
+
+  yarn dev
+}
 ```
-
-### Download manually
-
-Download the example:
-
-```bash
-curl https://codeload.github.com/vercel/next.js/tar.gz/canary | tar -xz --strip=2 next.js-canary/examples/with-chakra-ui
-cd with-chakra-ui
-```
-
-Install it and run:
-
-```bash
-npm install
-npm run dev
-# or
-yarn
-yarn dev
-```
-
-Deploy it to the cloud with [Vercel](https://vercel.com/import?filter=next.js&utm_source=github&utm_medium=readme&utm_campaign=next-example) ([Documentation](https://nextjs.org/docs/deployment)).
