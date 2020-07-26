@@ -4,11 +4,12 @@ const fonts = { ...chakraTheme.fonts, mono: `'Menlo', monospace` }
 
 const breakpoints = ['40em', '52em', '64em']
 
-const theme = {
+const custonTheme = {
   ...chakraTheme,
   colors: {
     ...chakraTheme.colors,
     black: '#16161D',
+    green1: '#00FF00',
   },
   fonts,
   breakpoints,
@@ -35,4 +36,4 @@ const theme = {
   },
 }
 
-export default theme
+export default custonTheme
