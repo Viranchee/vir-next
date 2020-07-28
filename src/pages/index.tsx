@@ -11,7 +11,9 @@ function Index() {
           Hello
         </Heading>
         <Text>Yo!</Text>
-        <Button isFullWidth>Click Me Please</Button>
+        <Button isFullWidth color="#01AA00" roundedTop="">
+          Click Me Please
+        </Button>
       </Stack>
     </ThemeProvider>
   )
