@@ -10,11 +10,12 @@
     }
   ],
   "scripts": {
+    "parcel": "parcel src/index.html",
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint ./src --ext ts,tsx --max-warnings 5",
-    "lint:fix": "eslint ./src --fix --ext ts,tsx",
+    "lint": "eslint ./src --ext ts,tsx",
+    "lint:fix": "lint --ext",
     "lint-debug": "eslint . --ext .ts --debug"
   },
   "dependencies": {
@@ -39,7 +40,7 @@
     "eslint-config-react-app": "^5.2.1",
     "eslint-plugin-flowtype": "4.x",
     "eslint-plugin-import": "2.x",
-    "eslint-plugin-jsx-a11y": "6.x",
+    "eslint-plugin-jsx-a11y": "^6.3.1",
     "eslint-plugin-prettier": "^3.1.4",
     "eslint-plugin-react": "7.x",
     "eslint-plugin-react-hooks": "^4.0.8",
