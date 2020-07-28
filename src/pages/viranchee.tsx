@@ -1,5 +1,5 @@
 import React from 'react'
-import { ThemeProvider, CSSReset, Button, Stack, Heading, Text, Box, Flex } from '@chakra-ui/core'
+import { ThemeProvider, CSSReset, Button, Box, Flex } from '@chakra-ui/core'
 import customTheme from 'theme'
 
 function Index() {
