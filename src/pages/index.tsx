@@ -1,15 +1,8 @@
 import React from 'react'
-import {
-  ThemeProvider,
-  CSSReset,
-  Button,
-  Stack,
-  Heading,
-  Text,
-} from '@chakra-ui/core'
+import { ThemeProvider, CSSReset, Button, Stack, Heading, Text } from '@chakra-ui/core'
 import customTheme from 'theme'
 
-function Index({ children }) {
+function Index() {
   return (
     <ThemeProvider theme={customTheme}>
       <CSSReset />
@@ -18,7 +11,9 @@ function Index({ children }) {
           Hello
         </Heading>
         <Text>Yo!</Text>
-        <Button isFullWidth>Click Me Please</Button>
+        <Button isFullWidth color="#01AA00" roundedTop="">
+          Click Me Please
+        </Button>
       </Stack>
     </ThemeProvider>
   )

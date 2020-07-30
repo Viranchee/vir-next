@@ -11,6 +11,7 @@ const custonTheme = {
     ...chakraTheme.colors,
     black: '#16161D',
     green1: '#00FF00',
+    random: '#12AA00',
   },
   fonts,
   breakpoints,
