@@ -1,9 +1,9 @@
-import React, { FunctionComponent } from 'react'
+import React, { FC } from 'react'
 import { ThemeProvider, CSSReset } from '@chakra-ui/core'
 import customTheme from 'theme'
 import AppContainer from 'components/appcontainer'
 
-const Index: FunctionComponent<{}> = () => {
+const Index: FC<{}> = () => {
   return (
     <ThemeProvider theme={customTheme}>
       <CSSReset />

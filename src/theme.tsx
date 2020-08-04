@@ -3,7 +3,7 @@ import React from 'react'
 
 const fonts = { ...chakraTheme.fonts, mono: `'Menlo', monospace` }
 
-const breakpoints = ['40em', '52em', '64em']
+const breakpoints = ['40em', '52em', '64em', '80em']
 
 const custonTheme = {
   ...chakraTheme,
